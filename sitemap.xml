@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://herohuqinchao.github.io/playlist/playlist</loc>
+    
+    <lastmod>2022-03-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://herohuqinchao.github.io/about</loc>
+    
+    <lastmod>2022-03-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://herohuqinchao.github.io/PY</loc>
     
     <lastmod>2022-03-09</lastmod>
@@ -12,15 +30,6 @@
   
   <url>
     <loc>https://herohuqinchao.github.io/archive</loc>
-    
-    <lastmod>2022-03-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://herohuqinchao.github.io/about</loc>
     
     <lastmod>2022-03-09</lastmod>
     
