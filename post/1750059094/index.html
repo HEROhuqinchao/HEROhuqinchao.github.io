@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>第一个页面 - SJのBlog</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="SJ">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    
+
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/HEROhuqinchao/dowload/gh-pages/image/IMG_0006.JPG" type="image/x-icon" />
+    <meta name="description" content="准备工具1.安装node.js2.安装hexo3.安装git（选择性安装，因为hexo有插件可以直接上传Github）4.一个Github账号用于创建库 需具备基础1.html2.css3.markdown（主要写文章的标记语言，编写方便） 创建一个Github库在Github中创建一个库，其中Repository name将会影响到后续网页的上传，请慎重填写。https:&#x2F;&#x2F;raw.github">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一个页面">
+<meta property="og:url" content="https://github.com/HEROhuqinchao/post/1750059094/">
+<meta property="og:site_name" content="SJのBlog">
+<meta property="og:description" content="准备工具1.安装node.js2.安装hexo3.安装git（选择性安装，因为hexo有插件可以直接上传Github）4.一个Github账号用于创建库 需具备基础1.html2.css3.markdown（主要写文章的标记语言，编写方便） 创建一个Github库在Github中创建一个库，其中Repository name将会影响到后续网页的上传，请慎重填写。https:&#x2F;&#x2F;raw.github">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-09T12:00:32.000Z">
+<meta property="article:modified_time" content="2022-03-09T12:04:30.909Z">
+<meta property="article:author" content="SJ">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary">
+    <link rel="stylesheet" href="/HEROhuqinchao/lib/jquery.fancybox.min.css?v=1646827745837">
+    
+        <link rel="stylesheet" href="//at.alicdn.com/t/font_3167237_lv2olm2qxt.css">
+    
+    <link rel="stylesheet" href="/HEROhuqinchao/lib/mdui_043tiny/css/mdui.css?v=1646827745837">
+    <link rel="stylesheet" href="/HEROhuqinchao/lib/iconfont/iconfont.css?v=1646827745837">
+    <link rel="stylesheet" href="/HEROhuqinchao/css/style.css?v=1646827745837">
+     
+    
+        <link rel="stylesheet" href="/custom.css">
+    
+<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/HEROhuqinchao/atom.xml" title="SJのBlog" type="application/atom+xml">
+</head>
+
+<body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" style="background-image: url(https://raw.githubusercontent.com/HEROhuqinchao/dowload/gh-pages/o_1e8p92oupj7qrm710v4c0o10le0.png)"></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/HEROhuqinchao/" title="SJ" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/HEROhuqinchao/dowload/gh-pages/image/IMG_0006.JPG" alt="SJ"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/HEROhuqinchao/" title="SJ">
+            <img src="https://raw.githubusercontent.com/HEROhuqinchao/dowload/gh-pages/image/IMG_0006.JPG" alt="SJ" alt="SJ">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>1</div>
+        <div><span>标签</span>1</div>
+        <div><span>分类</span>1</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/HEROhuqinchao/" title="首页">
+            <i class="mdui-list-item-icon nexmoefont icon-city"></i>
+            <div class="mdui-list-item-content">
+                首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/HEROhuqinchao/archive" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-gongyuan"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/HEROhuqinchao/library" title="资源库">
+            <i class="mdui-list-item-icon nexmoefont icon-tushuguan"></i>
+            <div class="mdui-list-item-content">
+                资源库
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/HEROhuqinchao/about" title="关于我">
+            <i class="mdui-list-item-icon nexmoefont icon-chezhan"></i>
+            <div class="mdui-list-item-content">
+                关于我
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/HEROhuqinchao/PY" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://jq.qq.com/?_wv=1027&k=5CfKHun" target="_blank" mdui-tooltip="{content: 'QQ群'}" style="color: rgb(249, 174, 8);background-color: rgba(249, 174, 8, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://discord.gg/UAz4JCd2XV" target="_blank" mdui-tooltip="{content: 'Discord'}" style="color: rgb(75, 63, 243);background-color: rgba(75, 63, 243, .15);">
+            <i class="nexmoefont icon-discord"></i>
+        </a><a class="mdui-ripple" href="https://twitter.com/Mengxiaozhi3" target="_blank" mdui-tooltip="{content: 'Twitter'}" style="color: rgb(28, 135, 235);background-color: rgba(28, 135, 235, .15);">
+            <i class="nexmoefont icon-twitter"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/51414889" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://www.youtube.com/channel/UCZkadYq6vDo0lsKdYdp65wA" target="_blank" mdui-tooltip="{content: 'Youtube'}" style="color: rgb(222, 69, 28);background-color: rgba(222, 69, 28, .15）;">
+            <i class="nexmoefont icon-youtube"></i>
+        </a><a class="mdui-ripple" href="https://github.com/mengxiaozhi" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/HEROhuqinchao/categories/学习日常/">学习日常</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/HEROhuqinchao/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a>
+    </div>
+    
+  </div>
+
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/HEROhuqinchao/archives/2022/">2022</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">最新文章</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/HEROhuqinchao/post/1750059094/">第一个页面</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 SJ
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        <br><p></p><a target="_blank" href="https://galigali.club"><img src="https://raw.githubusercontent.com/HEROhuqinchao/dowload/gh-pages/image/GaliClubLogo2021.png" width="100px" height="100px"></a><script data-ad-client="ca-pub-2058306854838448" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+            <div class="nexmoe-post">
+
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+              <img data-src="https://raw.githubusercontent.com/HEROhuqinchao/dowload/gh-pages/o_1e8p92oupj7qrm710v4c0o10le0.png" data-sizes="auto" alt="第一个页面" class="lazyload">
+              <h1>第一个页面</h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年03月09日</a>
+</div>
+
+      
+
+      <h2 id="准备工具"><a href="#准备工具" class="headerlink" title="准备工具"></a>准备工具</h2><p>1.安装node.js<br>2.安装hexo<br>3.安装git（选择性安装，因为hexo有插件可以直接上传Github）<br>4.一个Github账号用于创建库</p>
+<h2 id="需具备基础"><a href="#需具备基础" class="headerlink" title="需具备基础"></a>需具备基础</h2><p>1.html<br>2.css<br>3.markdown（主要写文章的标记语言，编写方便）</p>
+<h2 id="创建一个Github库"><a href="#创建一个Github库" class="headerlink" title="创建一个Github库"></a>创建一个Github库</h2><p>在Github中创建一个库，其中Repository name将会影响到后续网页的上传，请慎重填写。<br><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/mengxiaozhi/dowload/gh-pages/image/Screen%20Shot%202022-01-31%20at%206.37.25%20PM.png">https://raw.githubusercontent.com/mengxiaozhi/dowload/gh-pages/image/Screen%20Shot%202022-01-31%20at%206.37.25%20PM.png</a></p>
+<p>创建完库后的https链接记下来，后续上传网页将会用到<br><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/mengxiaozhi/dowload/gh-pages/image/Screen%20Shot%202022-01-31%20at%206.37.36%20PM.png">https://raw.githubusercontent.com/mengxiaozhi/dowload/gh-pages/image/Screen%20Shot%202022-01-31%20at%206.37.36%20PM.png</a></p>
+<h2 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h2><p>进入<a target="_blank" rel="noopener" href="https://nodejs.org/">https://nodejs.org/</a><br><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/mengxiaozhi/dowload/gh-pages/image/Screen%20Shot%202022-01-31%20at%203.02.20%20PM.png">https://raw.githubusercontent.com/mengxiaozhi/dowload/gh-pages/image/Screen%20Shot%202022-01-31%20at%203.02.20%20PM.png</a><br>LTS:长期服务，较为稳定<br>Current:最新版本<br>建议下载LTS版本，搭建网站以稳为主。</p>
+<p>可以选择直接下载安装包下载，也可以用指令搭配其他环境下载<br><a target="_blank" rel="noopener" href="https://nodejs.org/zh-tw/download/package-manager/">https://nodejs.org/zh-tw/download/package-manager/</a></p>
+<p>安装完后，检查node.js版本验证是否成功安装</p>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><code class="hljs crmsh">npm -v  <span class="hljs-comment">#检查npm版本号</span><br><span class="hljs-keyword">node</span> <span class="hljs-title">-v</span>  <span class="hljs-comment">#检查node.js版本号</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>Hexo必须在具备node.js的环境中运行，所以必须执行上一步<br>在命令行中执行</p>
+<figure class="highlight avrasm"><table><tr><td class="code"><pre><code class="hljs avrasm">npm install hexo-<span class="hljs-keyword">cli</span> -g  <span class="hljs-meta">#安装Hexo本体</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="创建第一个网页"><a href="#创建第一个网页" class="headerlink" title="创建第一个网页"></a>创建第一个网页</h2><p>初始化Hexo用于创建第一个页面</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><code class="hljs csharp">hexo <span class="hljs-keyword">init</span>  <span class="hljs-meta">#初始化Hexo</span><br></code></pre></td></tr></table></figure>
+<p>hexo init的后面也可以加一个文件夹名字用于创建一个新的空文件夹，比如在后面加一个blog，如果文件夹不是空的，hexo将初始化失败。</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><code class="hljs csharp">hexo <span class="hljs-keyword">init</span> blog  <span class="hljs-meta">#在blog文件夹初始化Hexo</span><br></code></pre></td></tr></table></figure>
+<h2 id="写第一篇文章"><a href="#写第一篇文章" class="headerlink" title="写第一篇文章"></a>写第一篇文章</h2><figure class="highlight haxe"><table><tr><td class="code"><pre><code class="hljs haxe">hexo <span class="hljs-keyword">new</span> <span class="hljs-type"></span>&lt;tittle&gt; <span class="hljs-meta">#创建一个新页面，&lt;   &gt;内为文章标题</span><br></code></pre></td></tr></table></figure>
+<p>如果你的主题有默认布局，则可以加上layout生成默认布局的页面</p>
+<figure class="highlight gauss"><table><tr><td class="code"><pre><code class="hljs gauss">hexo <span class="hljs-keyword">new</span> [layout] &lt;<span class="hljs-built_in">title</span>&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="测试和编译"><a href="#测试和编译" class="headerlink" title="测试和编译"></a>测试和编译</h2><figure class="highlight 1c"><table><tr><td class="code"><pre><code class="hljs 1c">hexo s  <span class="hljs-meta">#启用服务，http:<span class="hljs-comment">//localhost:4000/ 为默认地址</span></span><br></code></pre></td></tr></table></figure>
+<h2 id="上传网页"><a href="#上传网页" class="headerlink" title="上传网页"></a>上传网页</h2><p>在不使用git的情况下，单纯靠Hexo上传网页，需要先安装Hexo内的一个插件</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><code class="hljs cmake">npm <span class="hljs-keyword">install</span> hexo-deployer-git --save  <span class="hljs-comment">#安装hexo-deployer-git</span><br></code></pre></td></tr></table></figure>
+<p>安装完成后需到hexo的_config.yml配置文件进行GitHub库的设定</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># Deployment</span><br><span class="hljs-comment">## Docs: https://hexo.io/docs/one-command-deployment</span><br><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">&#x27;git&#x27;</span>  <span class="hljs-comment">#如果是上传到git，type类型填git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">&#x27;https://github.com/username/blog.git&#x27;</span>  <span class="hljs-comment">#这边填写的就是你创建完库后的http链接，直接复制粘贴即可。username填你的名字，blog是你的库，如果你的库就是你的名字则不需要username后面的内容，但最后都加.git</span><br>  <span class="hljs-attr">brach:</span> <span class="hljs-string">&#x27;gh-pages&#x27;</span>  <span class="hljs-comment">#这边是你库的分支，选择你想上传的就好，一般填gh-pages</span><br></code></pre></td></tr></table></figure>
+<p>清除本地文件</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">hexo</span> cl  <span class="hljs-comment">#清除本地文件</span><br></code></pre></td></tr></table></figure>
+<p>编译生成静态网页文件</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">hexo</span> g  <span class="hljs-comment">#编译生成静态网页文件</span><br></code></pre></td></tr></table></figure>
+<p>将编译完成的静态文件上传至Github</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">hexo</span> d  <span class="hljs-comment">#上传至Github,第一次上传会要求登入账号</span><br></code></pre></td></tr></table></figure>
+<p>之后就完成啦～你的网站已经可以在Github上正常使用了～</p>
+<h2 id="推荐使用软件"><a href="#推荐使用软件" class="headerlink" title="推荐使用软件"></a>推荐使用软件</h2><p>1.Typora<br>Markdown语言的编辑器，可以很轻易的编写内容</p>
+<p>2.Visual Studio Code<br>微软出品的编辑器，前端必备</p>
+
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>本文作者：</strong>SJ<br>
+        <strong>本文链接：</strong><a href="https://github.com/HEROhuqinchao/post/1750059094/" title="https:&#x2F;&#x2F;github.com&#x2F;HEROhuqinchao&#x2F;post&#x2F;1750059094&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;github.com&#x2F;HEROhuqinchao&#x2F;post&#x2F;1750059094&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/HEROhuqinchao/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/">学习日常</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/HEROhuqinchao/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a>
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div>
+            <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7"><span class="toc-number">1.</span> <span class="toc-text">准备工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9C%80%E5%85%B7%E5%A4%87%E5%9F%BA%E7%A1%80"><span class="toc-number">2.</span> <span class="toc-text">需具备基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAGithub%E5%BA%93"><span class="toc-number">3.</span> <span class="toc-text">创建一个Github库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85node-js"><span class="toc-number">4.</span> <span class="toc-text">安装node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Hexo"><span class="toc-number">5.</span> <span class="toc-text">安装Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%BD%91%E9%A1%B5"><span class="toc-number">6.</span> <span class="toc-text">创建第一个网页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%99%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0"><span class="toc-number">7.</span> <span class="toc-text">写第一篇文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E5%92%8C%E7%BC%96%E8%AF%91"><span class="toc-number">8.</span> <span class="toc-text">测试和编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8A%E4%BC%A0%E7%BD%91%E9%A1%B5"><span class="toc-number">9.</span> <span class="toc-text">上传网页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8%E8%BD%AF%E4%BB%B6"><span class="toc-number">10.</span> <span class="toc-text">推荐使用软件</span></a></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+     
+    <div id="nexmoe-search-space">
+        <div class="search-container">
+            <div class="search-header">
+                <div class="search-input-container">
+                    <input class="search-input" type="text" placeholder="搜索" oninput="sinput();">
+                </div>
+                <a class="search-close" onclick="sclose();">×</a>
+            </div>
+            <div class="search-body"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+ 
+
+<script async src="/HEROhuqinchao/js/app.js?v=1646827745847"></script>
+
+
+	<script async src="/HEROhuqinchao/js/search.js?v=1646827745847"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+
+    
+
+
+
+
+
+<script src="/HEROhuqinchao/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/HEROhuqinchao/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":200,"height":300},"mobile":{"show":false},"log":false});</script></body>
+
+</html>
