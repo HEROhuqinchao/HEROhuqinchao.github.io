@@ -12,25 +12,25 @@
     
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/HEROhuqinchao/dowload/main/image/head.jpeg" type="image/x-icon" />
-    <meta name="description" content="###谈谈Runtime   OC是一门动态性比较强的编程语言，允许很多操作推迟到程序运行时再进行 OC的动态性就是由Runtime来支撑和实现的，Runtime是一套C语言的API，封装了很多动态性相关的函数 平时编写的OC代码，底层都是转换成了Runtime API进行调用 利用如time我们可以做很多事情 如1、利用关联对象（AssociatedObject）给分类添加属性2、遍历类的所有成">
+    <meta name="description" content="谈谈Runtime OC是一门动态性比较强的编程语言，允许很多操作推迟到程序运行时再进行 OC的动态性就是由Runtime来支撑和实现的，Runtime是一套C语言的API，封装了很多动态性相关的函数 平时编写的OC代码，底层都是转换成了Runtime API进行调用 利用如time我们可以做很多事情 如1、利用关联对象（AssociatedObject）给分类添加属性2、遍历类的所有成员变量（修">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试题（一）">
 <meta property="og:url" content="https://herohuqinchao.github.io/post/950528940/">
 <meta property="og:site_name" content="SJのBlog">
-<meta property="og:description" content="###谈谈Runtime   OC是一门动态性比较强的编程语言，允许很多操作推迟到程序运行时再进行 OC的动态性就是由Runtime来支撑和实现的，Runtime是一套C语言的API，封装了很多动态性相关的函数 平时编写的OC代码，底层都是转换成了Runtime API进行调用 利用如time我们可以做很多事情 如1、利用关联对象（AssociatedObject）给分类添加属性2、遍历类的所有成">
+<meta property="og:description" content="谈谈Runtime OC是一门动态性比较强的编程语言，允许很多操作推迟到程序运行时再进行 OC的动态性就是由Runtime来支撑和实现的，Runtime是一套C语言的API，封装了很多动态性相关的函数 平时编写的OC代码，底层都是转换成了Runtime API进行调用 利用如time我们可以做很多事情 如1、利用关联对象（AssociatedObject）给分类添加属性2、遍历类的所有成员变量（修">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-16T01:43:15.000Z">
-<meta property="article:modified_time" content="2022-03-17T02:22:58.741Z">
+<meta property="article:modified_time" content="2022-03-17T02:25:56.966Z">
 <meta property="article:author" content="SJ">
 <meta property="article:tag" content="OC">
 <meta name="twitter:card" content="summary">
-    <link rel="stylesheet" href="/lib/jquery.fancybox.min.css?v=1647483795121">
+    <link rel="stylesheet" href="/lib/jquery.fancybox.min.css?v=1647483968390">
     
         <link rel="stylesheet" href="//at.alicdn.com/t/font_3167237_lv2olm2qxt.css">
     
-    <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css?v=1647483795121">
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1647483795121">
-    <link rel="stylesheet" href="/css/style.css?v=1647483795121">
+    <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css?v=1647483968390">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1647483968390">
+    <link rel="stylesheet" href="/css/style.css?v=1647483968390">
      
     
         <link rel="stylesheet" href="/custom.css">
@@ -256,8 +256,7 @@
 
       
 
-      <p>###谈谈Runtime </p>
-<blockquote>
+      <h2 id="谈谈Runtime"><a href="#谈谈Runtime" class="headerlink" title="谈谈Runtime"></a>谈谈Runtime</h2><blockquote>
 <p>OC是一门动态性比较强的编程语言，允许很多操作推迟到程序运行时再进行</p>
 <p>OC的动态性就是由Runtime来支撑和实现的，Runtime是一套C语言的API，封装了很多动态性相关的函数</p>
 <p>平时编写的OC代码，底层都是转换成了Runtime API进行调用</p>
@@ -270,29 +269,23 @@
 <p>2、调用methodSignatureForSelector:方法（方法签名函数）在此方法中：<br>如果返回值为空 则直接调用 调用doesNotRecognizeSelector:方法 然后程序报错：unrecognized selector sent to instance 经典错误<br>如果返回值不为空 则直接进入第3步 调用 forwardInvocation方法</p>
 <p>3、forwardInvocation：方法<br>开发人员可以在此方法中处理调用的方法</p>
 </blockquote>
-<p>###谈谈Runloop</p>
-<blockquote>
+<h2 id="谈谈Runloop"><a href="#谈谈Runloop" class="headerlink" title="谈谈Runloop"></a>谈谈Runloop</h2><blockquote>
 <p>顾名思义就是运行循环，在程序运行过程中循环做一些事情</p>
 <p>1、保持程序的持续运行<br>2、处理App中的各种事件（比如触摸事件、定时器事件等）<br>3、节省CPU资源，提高程序性能：该做事时做事，该休息时休息</p>
 </blockquote>
-<p>#####runloop与线程之间的关系</p>
-<blockquote>
+<h2 id="runloop与线程之间的关系"><a href="#runloop与线程之间的关系" class="headerlink" title="runloop与线程之间的关系"></a>runloop与线程之间的关系</h2><blockquote>
 <p>1、每条线程都有唯一的一个与之对应的RunLoop对象<br>2、RunLoop保存在一个全局的Dictionary里，线程作为key，RunLoop作为value<br>3、线程刚创建时并没有RunLoop对象，RunLoop会在第一次获取它时创建（[NSRunLoop currentRunLoop]）<br>4、RunLoop会在线程结束时销毁<br>5、主线程的RunLoop已经自动获取（创建），子线程默认没有开启RunLoop</p>
 </blockquote>
-<p>#####获取runloop对象的方法</p>
-<blockquote>
+<h2 id="获取runloop对象的方法"><a href="#获取runloop对象的方法" class="headerlink" title="获取runloop对象的方法"></a>获取runloop对象的方法</h2><blockquote>
 <p>[NSRunLoop currentRunLoop]; // 获得当前线程的RunLoop对象<br>[NSRunLoop mainRunLoop]; // 获得主线程的RunLoop对象<br>CFRunLoopGetCurrent(); // 获得当前线程的RunLoop对象<br>CFRunLoopGetMain(); // 获得主线程的RunLoop对象</p>
 </blockquote>
-<p>###你做了什么工作使崩溃率下降的     （使用什么工具定位崩溃，崩溃的补救措施）</p>
-<blockquote>
+<h2 id="你做了什么工作使崩溃率下降的-（使用什么工具定位崩溃，崩溃的补救措施）"><a href="#你做了什么工作使崩溃率下降的-（使用什么工具定位崩溃，崩溃的补救措施）" class="headerlink" title="你做了什么工作使崩溃率下降的     （使用什么工具定位崩溃，崩溃的补救措施）"></a>你做了什么工作使崩溃率下降的     （使用什么工具定位崩溃，崩溃的补救措施）</h2><blockquote>
 <p>答：线上项目中集成第三方bug收集工具  bugly  然后配置好符号表（dSYM），app每次崩溃bugly后台都会有相应的崩溃信息，而且能够具体的某一行，根据崩溃信息查漏补缺。<br>开发过程中根据Xcode设置全局断点定位崩溃某一行。<br>测试过程中可以根据bugly后台查看崩溃信息，也可以使用Xcode查看手机里面的log信息来分析crash信息。</p>
 </blockquote>
-<p>###使用什么方式使子线程永驻</p>
-<blockquote>
+<h2 id="使用什么方式使子线程永驻"><a href="#使用什么方式使子线程永驻" class="headerlink" title="使用什么方式使子线程永驻"></a>使用什么方式使子线程永驻</h2><blockquote>
 <p>开启子线程的runloop</p>
 </blockquote>
-<p>###https 中间人攻击（是怎样攻击的）</p>
-<blockquote>
+<h2 id="https-中间人攻击（是怎样攻击的）"><a href="#https-中间人攻击（是怎样攻击的）" class="headerlink" title="https 中间人攻击（是怎样攻击的）"></a>https 中间人攻击（是怎样攻击的）</h2><blockquote>
 <p>HTTPS 中间人攻击。也就是通讯双方中插入一个中间人，通讯双方的对方已经变成中间人了，而不是原本的对方。</p>
 <p>HTTPS 协议之所以是安全的是因为 HTTPS 协议会对传输的数据进行加密，而加密过程是使用了非对称加密实现。但其实，HTTPS 在内容传输的加密上使用的是对称加密，非对称加密只作用在证书验证阶段。</p>
 <p>HTTPS的整体过程分为证书验证和数据传输阶段</p>
@@ -315,21 +308,17 @@
 <p>Q: HTTPS 的传输过程是怎样的？<br>A: 客户端发起 HTTPS 请求，服务端返回证书，客户端对证书进行验证，验证通过后本地生成用于改造对称加密算法的随机数，通过证书中的公钥对随机数进行加密传输到服务端，服务端接收后通过私钥解密得到随机数，之后的数据交互通过对称加密算法进行加解密。<br>Q: 为什么需要证书？<br>A: 防止”中间人“攻击，同时可以为网站提供身份证明。</p>
 <p>Q: 使用 HTTPS 会被抓包吗？<br>A: 会被抓包，HTTPS 只防止用户在不知情的情况下通信被监听，如果用户主动授信，是可以构建“中间人”网络，代理软件可以对传输内容进行解密。</p>
 </blockquote>
-<p>###KVC 原理</p>
-<blockquote>
+<h2 id="KVC-原理"><a href="#KVC-原理" class="headerlink" title="KVC 原理"></a>KVC 原理</h2><blockquote>
 <p>1、KVC的全称是Key-Value Coding、俗称“键值编码”、可以通过一个key来访问某一个属性。<br>2、常见的API有四种<br>setValue: forKey<br>setValue: forKeyPath<br>valueForKey:<br>valueForKeyPath<br> forKey 和 forKeyPath 主要区别是路径区别</p>
 </blockquote>
-<p>###KVO实现原理</p>
-<blockquote>
+<h2 id="KVO实现原理"><a href="#KVO实现原理" class="headerlink" title="KVO实现原理"></a>KVO实现原理</h2><blockquote>
 <p> KVO的原理：<br> 1、当实例对象 进行KVO观察时候，会利用RuntimeAPI动态生成一个子类，然后将对象的isa指向新生成的子类<br> 2、KVO本质上是监听属性的setter方法，只要被观察对象有成员变量和对应的set方法，调用Foundation的_NSSetValueAndNotify函数这个函数内部会执行 willChangeVlaueForKey函数、父类的setter方法 和didChangeVlaueForKey函数<br> 3、子类会重写父类的set、class、dealloc方法<br> 4、当观察对象移除所有的监听后，会将观察对象的isa指向原来的类<br> 5、当观察对象的监听全部移除后，动态生成的类不会注销，而是留在下次观察时候再使用，避免反复创建中间子类</p>
 </blockquote>
-<p>###为什么ui在主线程刷新</p>
-<blockquote>
+<h2 id="为什么ui在主线程刷新"><a href="#为什么ui在主线程刷新" class="headerlink" title="为什么ui在主线程刷新"></a>为什么ui在主线程刷新</h2><blockquote>
 <p>UI刷新在主线程主要有两个原因<br>第一：安全<br>因为UIKit框架不是线程安全的，当多个线程同时操作UI的时候，抢夺资源，导致崩溃，UI异常等问题。</p>
 <p>第二：用户体验<br>iOS中只有主线程才能立即刷新UI。在子线程中是不能够更新UI，我们看到的子线程能够更新UI的原因是，等到子线程执行完毕，自动进入了主线程去执行子线程中更新UI的代码。由于子线程执行时间非常短暂，让我们误以为子线程可以更新UI。如果子线程一直在运行，则无法更新UI，因为没有办法进入主线程。</p>
 </blockquote>
-<p>###block有几种，底层实现，以及如何持有外部变量的</p>
-<blockquote>
+<h2 id="block有几种，底层实现，以及如何持有外部变量的"><a href="#block有几种，底层实现，以及如何持有外部变量的" class="headerlink" title="block有几种，底层实现，以及如何持有外部变量的"></a>block有几种，底层实现，以及如何持有外部变量的</h2><blockquote>
 <p>block是封装了函数调用以及函数调用环境的OC对象<br>block 有三种类型分别如下<br>__NSGlobalBlock<br>__NSStackBlock<br>__NSMallocBlock<br>只要没有访问 auto的变量 都是 <strong>NSGlobalBlock</strong></p>
 <p>访问了auto变量 但是没有调用 copy  都是  <strong>NSStackBlock</strong></p>
 <p>即访问了auto变量又调用了copy 则是  <strong>NSMallocBlock</strong></p>
@@ -374,6 +363,13 @@
                         
                           
                           
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%88%E8%B0%88Runtime"><span class="toc-number">1.</span> <span class="toc-text">谈谈Runtime</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%88%E8%B0%88Runloop"><span class="toc-number">2.</span> <span class="toc-text">谈谈Runloop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#runloop%E4%B8%8E%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">3.</span> <span class="toc-text">runloop与线程之间的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96runloop%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">获取runloop对象的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%A0%E5%81%9A%E4%BA%86%E4%BB%80%E4%B9%88%E5%B7%A5%E4%BD%9C%E4%BD%BF%E5%B4%A9%E6%BA%83%E7%8E%87%E4%B8%8B%E9%99%8D%E7%9A%84-%EF%BC%88%E4%BD%BF%E7%94%A8%E4%BB%80%E4%B9%88%E5%B7%A5%E5%85%B7%E5%AE%9A%E4%BD%8D%E5%B4%A9%E6%BA%83%EF%BC%8C%E5%B4%A9%E6%BA%83%E7%9A%84%E8%A1%A5%E6%95%91%E6%8E%AA%E6%96%BD%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">你做了什么工作使崩溃率下降的     （使用什么工具定位崩溃，崩溃的补救措施）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E4%BB%80%E4%B9%88%E6%96%B9%E5%BC%8F%E4%BD%BF%E5%AD%90%E7%BA%BF%E7%A8%8B%E6%B0%B8%E9%A9%BB"><span class="toc-number">6.</span> <span class="toc-text">使用什么方式使子线程永驻</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#https-%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB%EF%BC%88%E6%98%AF%E6%80%8E%E6%A0%B7%E6%94%BB%E5%87%BB%E7%9A%84%EF%BC%89"><span class="toc-number">7.</span> <span class="toc-text">https 中间人攻击（是怎样攻击的）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#KVC-%E5%8E%9F%E7%90%86"><span class="toc-number">8.</span> <span class="toc-text">KVC 原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#KVO%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-number">9.</span> <span class="toc-text">KVO实现原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88ui%E5%9C%A8%E4%B8%BB%E7%BA%BF%E7%A8%8B%E5%88%B7%E6%96%B0"><span class="toc-number">10.</span> <span class="toc-text">为什么ui在主线程刷新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#block%E6%9C%89%E5%87%A0%E7%A7%8D%EF%BC%8C%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0%EF%BC%8C%E4%BB%A5%E5%8F%8A%E5%A6%82%E4%BD%95%E6%8C%81%E6%9C%89%E5%A4%96%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84"><span class="toc-number">11.</span> <span class="toc-text">block有几种，底层实现，以及如何持有外部变量的</span></a></li></ol>
+                                  </div>
+                              </button>
+                          
                           
                       
                     
@@ -402,10 +398,10 @@
 
  
 
-<script async src="/js/app.js?v=1647483795128"></script>
+<script async src="/js/app.js?v=1647483968398"></script>
 
 
-	<script async src="/js/search.js?v=1647483795128"></script>
+	<script async src="/js/search.js?v=1647483968398"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
