@@ -22,13 +22,13 @@
 <meta property="article:author" content="SJ">
 <meta property="article:tag" content="SJ">
 <meta name="twitter:card" content="summary">
-    <link rel="stylesheet" href="/lib/jquery.fancybox.min.css?v=1647486263613">
+    <link rel="stylesheet" href="/lib/jquery.fancybox.min.css?v=1647486408517">
     
         <link rel="stylesheet" href="//at.alicdn.com/t/font_3167237_lv2olm2qxt.css">
     
-    <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css?v=1647486263614">
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1647486263614">
-    <link rel="stylesheet" href="/css/style.css?v=1647486263614">
+    <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css?v=1647486408517">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1647486408517">
+    <link rel="stylesheet" href="/css/style.css?v=1647486408517">
      
     
         <link rel="stylesheet" href="/custom.css">
@@ -355,7 +355,23 @@ tags:
 <p>WordPress支持对一篇文章设置多个分类，而且这些分类可以是同级的，也可以是父子分类。但是Hexo不支持指定多个同级分类。下面的指定方法： categories:<br>Diary<br>Life<br>会使分类Life成为Diary的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类.</p>
 </blockquote>
 <h3 id="4-4-文章摘要"><a href="#4-4-文章摘要" class="headerlink" title="4.4. 文章摘要"></a>4.4. 文章摘要</h3><blockquote>
-<p>设置文章摘要，我们只需在想显示为摘要的内容之后添
+<p>设置文章摘要，我们只需在想显示为摘要的内容之后添 <code>&lt;!-- more --&gt;</code> 即可。像下面这样：</p>
+<pre><code>---
+title: hello hexo markdown
+date: 2016-11-16 18:11:25
+tags:
+- hello
+- hexo
+- markdown
+---
+
+我是短小精悍的文章摘要(๑•̀ㅂ•́) ✧
+
+&lt;!-- more --&gt;
+
+紧接着文章摘要的正文内容
+</code></pre>
+<p>这样，
         </article>
     </div>
     
@@ -447,10 +463,10 @@ tags:
 
  
 
-<script async src="/js/app.js?v=1647486263616"></script>
+<script async src="/js/app.js?v=1647486408517"></script>
 
 
-	<script async src="/js/search.js?v=1647486263616"></script>
+	<script async src="/js/search.js?v=1647486408517"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
