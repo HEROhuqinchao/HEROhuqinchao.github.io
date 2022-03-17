@@ -12,25 +12,25 @@
     
 
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/HEROhuqinchao/dowload/main/image/head.jpeg" type="image/x-icon" />
-    <meta name="description" content="###谈谈RuntimeOC是一门动态性比较强的编程语言，允许很多操作推迟到程序运行时再进行 OC的动态性就是由Runtime来支撑和实现的，Runtime是一套C语言的API，封装了很多动态性相关的函数 平时编写的OC代码，底层都是转换成了Runtime API进行调用 利用如time我们可以做很多事情 如1、利用关联对象（AssociatedObject）给分类添加属性2、遍历类的所有成员变量">
+    <meta name="description" content="###谈谈Runtime   OC是一门动态性比较强的编程语言，允许很多操作推迟到程序运行时再进行 OC的动态性就是由Runtime来支撑和实现的，Runtime是一套C语言的API，封装了很多动态性相关的函数 平时编写的OC代码，底层都是转换成了Runtime API进行调用 利用如time我们可以做很多事情 如1、利用关联对象（AssociatedObject）给分类添加属性2、遍历类的所有成">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试题（一）">
 <meta property="og:url" content="https://herohuqinchao.github.io/post/950528940/">
 <meta property="og:site_name" content="SJのBlog">
-<meta property="og:description" content="###谈谈RuntimeOC是一门动态性比较强的编程语言，允许很多操作推迟到程序运行时再进行 OC的动态性就是由Runtime来支撑和实现的，Runtime是一套C语言的API，封装了很多动态性相关的函数 平时编写的OC代码，底层都是转换成了Runtime API进行调用 利用如time我们可以做很多事情 如1、利用关联对象（AssociatedObject）给分类添加属性2、遍历类的所有成员变量">
+<meta property="og:description" content="###谈谈Runtime   OC是一门动态性比较强的编程语言，允许很多操作推迟到程序运行时再进行 OC的动态性就是由Runtime来支撑和实现的，Runtime是一套C语言的API，封装了很多动态性相关的函数 平时编写的OC代码，底层都是转换成了Runtime API进行调用 利用如time我们可以做很多事情 如1、利用关联对象（AssociatedObject）给分类添加属性2、遍历类的所有成">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-16T01:43:15.000Z">
-<meta property="article:modified_time" content="2022-03-17T02:13:55.584Z">
+<meta property="article:modified_time" content="2022-03-17T02:22:58.741Z">
 <meta property="article:author" content="SJ">
 <meta property="article:tag" content="OC">
 <meta name="twitter:card" content="summary">
-    <link rel="stylesheet" href="/lib/jquery.fancybox.min.css?v=1647483246398">
+    <link rel="stylesheet" href="/lib/jquery.fancybox.min.css?v=1647483795121">
     
         <link rel="stylesheet" href="//at.alicdn.com/t/font_3167237_lv2olm2qxt.css">
     
-    <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css?v=1647483246398">
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1647483246398">
-    <link rel="stylesheet" href="/css/style.css?v=1647483246398">
+    <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css?v=1647483795121">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1647483795121">
+    <link rel="stylesheet" href="/css/style.css?v=1647483795121">
      
     
         <link rel="stylesheet" href="/custom.css">
@@ -256,48 +256,32 @@
 
       
 
-      <p>###谈谈Runtime<br>OC是一门动态性比较强的编程语言，允许很多操作推迟到程序运行时再进行</p>
+      <p>###谈谈Runtime </p>
+<blockquote>
+<p>OC是一门动态性比较强的编程语言，允许很多操作推迟到程序运行时再进行</p>
 <p>OC的动态性就是由Runtime来支撑和实现的，Runtime是一套C语言的API，封装了很多动态性相关的函数</p>
 <p>平时编写的OC代码，底层都是转换成了Runtime API进行调用</p>
 <p>利用如time我们可以做很多事情 如<br>1、利用关联对象（AssociatedObject）给分类添加属性<br>2、遍历类的所有成员变量（修改textfield的占位文字颜色、字典转模型、自动归档解档）<br>3、交换方法实现（交换系统的方法）<br>4、利用消息转发机制解决方法找不到的异常问题</p>
 <p>OC中方法的调用都是转化为objc_msgSend函数的调用<br><code>objc_msgSend</code>函数可以分为三个阶段</p>
-<ol>
-<li><p>第一个阶段是：消息发送阶段</p>
-<p> 首先判断消息的接受者是否存在 如果不存在则直接返回如果存在则 从自己类的方法缓存列表中查找该方法，如果存在则执行 如果不存在则去自己类的方法列表中查找，如果存在则缓存到自己类的方法缓存列表中 然后在执行，如果不存在则去父类的方法缓存列表中查找，如果存在则缓存到自己类的方法缓存列表中 然后执行，如果不存在 则去父父类的方法列表中查找，如果存在 则缓存到自己类的方法缓存列表中， 如果不存在则进入第二不 方法动态解析阶段</p>
-</li>
-</ol>
-<ol start="2">
-<li><p>第二阶段是：方法动态解析阶段</p>
-<p> 首先判断方法是否动态解析过，如果之前已经有过动态解析 则直接进入第一步消息发送阶段</p>
-<p> 如果没有过动态解析则调用+resolveInstanceMethod：或则+resoveClassMethod：方法来动态解析 然后标记为已经动态解析 最后重新走“消息发送”的流程</p>
-<p> 在此阶段 我们可以添加一个新的方法来代替原来的方法 如果在此阶段不做任何处理 则直接进入第三步 消息转发阶段</p>
-</li>
-<li><p>第三阶段是：消息转发阶段</p>
-<p> 1、首先调用forwardingTargetForSelector:方法 在此方法中：如果返回值不为空 则直接给返回值转发消息<br> 如果返回值为空否则进入第2步 调用方法签名函数</p>
-<p> 2、调用methodSignatureForSelector:方法（方法签名函数）在此方法中：<br> 如果返回值为空 则直接调用 调用doesNotRecognizeSelector:方法 然后程序报错：unrecognized selector sent to instance 经典错误<br> 如果返回值不为空 则直接进入第3步 调用 forwardInvocation方法</p>
-<p> 3、forwardInvocation：方法<br> 开发人员可以在此方法中处理调用的方法</p>
-</li>
-</ol>
+<p>第一个阶段是：消息发送阶段<br>首先判断消息的接受者是否存在 如果不存在则直接返回如果存在则 从自己类的方法缓存列表中查找该方法，如果存在则执行 如果不存在则去自己类的方法列表中查找，如果存在则缓存到自己类的方法缓存列表中 然后在执行，如果不存在则去父类的方法缓存列表中查找，如果存在则缓存到自己类的方法缓存列表中 然后执行，如果不存在 则去父父类的方法列表中查找，如果存在 则缓存到自己类的方法缓存列表中， 如果不存在则进入第二不 方法动态解析阶段</p>
+<p>第二阶段是：方法动态解析阶段</p>
+<p>首先判断方法是否动态解析过，如果之前已经有过动态解析 则直接进入第一步消息发送阶段<br>如果没有过动态解析则调用+resolveInstanceMethod：或则+resoveClassMethod：方法来动态解析 然后标记为已经动态解析 最后重新走“消息发送”的流程<br>在此阶段 我们可以添加一个新的方法来代替原来的方法 如果在此阶段不做任何处理 则直接进入第三步 消息转发阶段<br>第三阶段是：消息转发阶段</p>
+<p>1、首先调用forwardingTargetForSelector:方法 在此方法中：如果返回值不为空 则直接给返回值转发消息<br>如果返回值为空否则进入第2步 调用方法签名函数</p>
+<p>2、调用methodSignatureForSelector:方法（方法签名函数）在此方法中：<br>如果返回值为空 则直接调用 调用doesNotRecognizeSelector:方法 然后程序报错：unrecognized selector sent to instance 经典错误<br>如果返回值不为空 则直接进入第3步 调用 forwardInvocation方法</p>
+<p>3、forwardInvocation：方法<br>开发人员可以在此方法中处理调用的方法</p>
+</blockquote>
 <p>###谈谈Runloop</p>
+<blockquote>
 <p>顾名思义就是运行循环，在程序运行过程中循环做一些事情</p>
 <p>1、保持程序的持续运行<br>2、处理App中的各种事件（比如触摸事件、定时器事件等）<br>3、节省CPU资源，提高程序性能：该做事时做事，该休息时休息</p>
+</blockquote>
 <p>#####runloop与线程之间的关系</p>
 <blockquote>
-<pre><code>1、每条线程都有唯一的一个与之对应的RunLoop对象
-2、RunLoop保存在一个全局的Dictionary里，线程作为key，RunLoop作为value
-3、线程刚创建时并没有RunLoop对象，RunLoop会在第一次获取它时创建（[NSRunLoop currentRunLoop]）
-4、RunLoop会在线程结束时销毁
-5、主线程的RunLoop已经自动获取（创建），子线程默认没有开启RunLoop
-</code></pre>
-<p>#####获取runloop对象的方法</p>
+<p>1、每条线程都有唯一的一个与之对应的RunLoop对象<br>2、RunLoop保存在一个全局的Dictionary里，线程作为key，RunLoop作为value<br>3、线程刚创建时并没有RunLoop对象，RunLoop会在第一次获取它时创建（[NSRunLoop currentRunLoop]）<br>4、RunLoop会在线程结束时销毁<br>5、主线程的RunLoop已经自动获取（创建），子线程默认没有开启RunLoop</p>
 </blockquote>
+<p>#####获取runloop对象的方法</p>
 <blockquote>
-<pre><code>[NSRunLoop currentRunLoop]; // 获得当前线程的RunLoop对象
-[NSRunLoop mainRunLoop]; // 获得主线程的RunLoop对象
-
-CFRunLoopGetCurrent(); // 获得当前线程的RunLoop对象
-CFRunLoopGetMain(); // 获得主线程的RunLoop对象
-</code></pre>
+<p>[NSRunLoop currentRunLoop]; // 获得当前线程的RunLoop对象<br>[NSRunLoop mainRunLoop]; // 获得主线程的RunLoop对象<br>CFRunLoopGetCurrent(); // 获得当前线程的RunLoop对象<br>CFRunLoopGetMain(); // 获得主线程的RunLoop对象</p>
 </blockquote>
 <p>###你做了什么工作使崩溃率下降的     （使用什么工具定位崩溃，崩溃的补救措施）</p>
 <blockquote>
@@ -327,11 +311,8 @@ CFRunLoopGetMain(); // 获得主线程的RunLoop对象
 </ol>
 <p>为什么数据传输是用对称加密？<br>首先，非对称加密的加解密效率是非常低的，而 http 的应用场景中通常端与端之间存在大量的交互，非对称加密的效率是无法接受的；另外，在 HTTPS 的场景中只有服务端保存了私钥，一对公私钥只能实现单向的加解密，所以 HTTPS 中内容传输加密采取的是对称加密，而不是非对称加密。</p>
 <p>为什么需要 CA 认证机构颁发证书？<br>HTTP 协议被认为不安全是因为传输过程容易被监听者勾线监听、伪造服务器，而 HTTPS 协议主要解决的便是网络传输的安全性问题。首先我们假设不存在认证机构，任何人都可以制作证书，这带来的安全风险便是经典的“中间人攻击”问题。“中间人攻击”的具体过程如下：</p>
-<p>过程原理：<br>1、客户端请求被劫持（如DNS劫持等），所有请求均发送到中间人的服务器<br>2、中间人服务器返回中间人自己的证书<br>3、客户端创建随机数，通过中间人证书的公钥对随机数加密后传送给中间人，然后凭随机数构造对称加密对传输内容进行加密传输<br>4、中间人因为拥有客户端的随机数，可以通过对称加密算法进行内容解密<br>5、中间人以客户端的请求内容再向正规网站发起请求<br>6、因为中间人与服务器的通信过程是合法的，正规网站通过建立的安全通道返回加密后的数据<br>7、中间人凭借与正规网站建立的对称加密算法对内容进行解密<br>8、中间人通过与客户端建立的对称加密算法对正规内容返回的数据进行加密传输<br>9、客户端通过与中间人建立的对称加密算法对返回结果数据进行解密</p>
-<p>由于缺少对证书的验证，所以客户端虽然发起的是 HTTPS 请求，但客户端完全不知道自己的网络已被拦截，传输内容被中间人全部窃取。</p>
-<p>Q: HTTPS 为什么安全？<br>A: 因为 HTTPS 保证了传输安全，防止传输过程被监听、防止数据被窃取，可以确认网站的真实性。</p>
-<p>Q: HTTPS 的传输过程是怎样的？<br>A: 客户端发起 HTTPS 请求，服务端返回证书，客户端对证书进行验证，验证通过后本地生成用于改造对称加密算法的随机数，通过证书中的公钥对随机数进行加密传输到服务端，服务端接收后通过私钥解密得到随机数，之后的数据交互通过对称加密算法进行加解密。</p>
-<p>Q: 为什么需要证书？<br>A: 防止”中间人“攻击，同时可以为网站提供身份证明。</p>
+<p>过程原理：<br>1、客户端请求被劫持（如DNS劫持等），所有请求均发送到中间人的服务器<br>2、中间人服务器返回中间人自己的证书<br>3、客户端创建随机数，通过中间人证书的公钥对随机数加密后传送给中间人，然后凭随机数构造对称加密对传输内容进行加密传输<br>4、中间人因为拥有客户端的随机数，可以通过对称加密算法进行内容解密<br>5、中间人以客户端的请求内容再向正规网站发起请求<br>6、因为中间人与服务器的通信过程是合法的，正规网站通过建立的安全通道返回加密后的数据<br>7、中间人凭借与正规网站建立的对称加密算法对内容进行解密<br>8、中间人通过与客户端建立的对称加密算法对正规内容返回的数据进行加密传输<br>9、客户端通过与中间人建立的对称加密算法对返回结果数据进行解密<br>由于缺少对证书的验证，所以客户端虽然发起的是 HTTPS 请求，但客户端完全不知道自己的网络已被拦截，传输内容被中间人全部窃取。<br>Q: HTTPS 为什么安全？<br>A: 因为 HTTPS 保证了传输安全，防止传输过程被监听、防止数据被窃取，可以确认网站的真实性。</p>
+<p>Q: HTTPS 的传输过程是怎样的？<br>A: 客户端发起 HTTPS 请求，服务端返回证书，客户端对证书进行验证，验证通过后本地生成用于改造对称加密算法的随机数，通过证书中的公钥对随机数进行加密传输到服务端，服务端接收后通过私钥解密得到随机数，之后的数据交互通过对称加密算法进行加解密。<br>Q: 为什么需要证书？<br>A: 防止”中间人“攻击，同时可以为网站提供身份证明。</p>
 <p>Q: 使用 HTTPS 会被抓包吗？<br>A: 会被抓包，HTTPS 只防止用户在不知情的情况下通信被监听，如果用户主动授信，是可以构建“中间人”网络，代理软件可以对传输内容进行解密。</p>
 </blockquote>
 <p>###KVC 原理</p>
@@ -349,11 +330,7 @@ CFRunLoopGetMain(); // 获得主线程的RunLoop对象
 </blockquote>
 <p>###block有几种，底层实现，以及如何持有外部变量的</p>
 <blockquote>
-<p>block是封装了函数调用以及函数调用环境的OC对象<br>block 有三种类型分别如下</p>
-</blockquote>
-<figure class="highlight sqf"><table><tr><td class="code"><pre><code class="hljs sqf">•	<span class="hljs-variable">__NSGlobalBlock</span>  <br>•	<span class="hljs-variable">__NSStackBlock</span>  <br>•	<span class="hljs-variable">__NSMallocBlock</span>  <br></code></pre></td></tr></table></figure>
-<blockquote>
-<p>只要没有访问 auto的变量 都是 <strong>NSGlobalBlock</strong></p>
+<p>block是封装了函数调用以及函数调用环境的OC对象<br>block 有三种类型分别如下<br>__NSGlobalBlock<br>__NSStackBlock<br>__NSMallocBlock<br>只要没有访问 auto的变量 都是 <strong>NSGlobalBlock</strong></p>
 <p>访问了auto变量 但是没有调用 copy  都是  <strong>NSStackBlock</strong></p>
 <p>即访问了auto变量又调用了copy 则是  <strong>NSMallocBlock</strong></p>
 <p>注意：__NSGlobalBlock__即使调用了copy 它还是 <strong>NSGlobalBlock</strong><br>             __NSStackBlock__调用了 copy 它就变成了  <strong>NSMallocBlock</strong><br>             <strong>NSMallocBlock</strong> 调用了copy 只是使引用计数增加 其类型还是 <strong>NSMallocBlock</strong></p>
@@ -425,10 +402,10 @@ CFRunLoopGetMain(); // 获得主线程的RunLoop对象
 
  
 
-<script async src="/js/app.js?v=1647483246406"></script>
+<script async src="/js/app.js?v=1647483795128"></script>
 
 
-	<script async src="/js/search.js?v=1647483246407"></script>
+	<script async src="/js/search.js?v=1647483795128"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
