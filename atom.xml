@@ -6,7 +6,7 @@
   <link href="https://herohuqinchao.github.io/atom.xml" rel="self"/>
   
   <link href="https://herohuqinchao.github.io/"/>
-  <updated>2022-03-17T03:06:36.857Z</updated>
+  <updated>2022-03-17T03:07:27.106Z</updated>
   <id>https://herohuqinchao.github.io/</id>
   
   <author>
@@ -21,118 +21,15 @@
     <link href="https://herohuqinchao.github.io/post/2602165680/"/>
     <id>https://herohuqinchao.github.io/post/2602165680/</id>
     <published>2022-03-17T02:54:49.000Z</published>
-    <updated>2022-03-17T03:06:36.857Z</updated>
+    <updated>2022-03-17T03:07:27.106Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><blockquote><p>Hexo是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。即把用户的markdown文件，按照指定的主题解析成静态网页。</p></blockquote><h2 id="2-安装hexo"><a href="#2-安装hexo" class="headerlink" title="2. 安装hexo"></a>2. 安装hexo</h2><blockquote><p>安装使用hexo之前需要先安装Node.js和Git，当已经安装了Node.js和npm(npm是node.js的包管理工具)，可以通过以下命令安装hexo</p><pre><code>$ npm install -g hexo-cli可以通过以下命令查看主机中是否安装了node.js和npm$ node --version    #检查是否安装了node.js$ npm --version     #检查是否安装了npm如下所示表示已经安装了node.js和npmroot@***:~# node --versionv8.11.3root@***:~# npm --version6.7.0</code></pre></blockquote><h2 id="3-建站"><a href="#3-建站" class="headerlink" title="3. 建站"></a>3. 建站</h2><blockquote><p>安装完Hexo之后，执行下列命令，Hexo将会在指定目录中新建所需要的文件，指定的目录即为Hexo的工作站</p><pre><code>$ hexo init &lt;folder&gt;$ cd &lt;folder&gt;$ npm install新建完成之后，指定目录中的情况如下.├── _config.yml├── package.json├── scaffolds├── source|   ├── _drafts|   └── _posts└── themes</code></pre></blockquote><h3 id="3-1-config-yml"><a href="#3-1-config-yml" class="headerlink" title="3.1. _config.yml"></a>3.1. _config.yml</h3><blockquote><p>网站的配置信息，您可以在此配置大部分的参数。 </p></blockquote><h3 id="3-2-package-json"><a href="#3-2-package-json" class="headerlink" title="3.2. package.json"></a>3.2. package.json</h3><blockquote><p>应用程序的信息，以及需要安装的模块信息。</p></blockquote><h3 id="3-3-scaffolds"><a href="#3-3-scaffolds" class="headerlink" title="3.3. scaffolds"></a>3.3. scaffolds</h3><blockquote><p>模版文件夹。新建文章时，Hexo 会根据 scaffold 中的模板文件来建立新的文件。Hexo的模板是指在新建的markdown文件中默认填充的内容。例如，如果修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。也就是说，通过hexo命令每新建一个文章，都会包含指定模板文件中的内容。</p></blockquote><h3 id="3-4-source"><a href="#3-4-source" class="headerlink" title="3.4. source"></a>3.4. source</h3><blockquote><p>资源文件夹是存放用户资源的地方，如markdown文章。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。</p><p>注意：除 _posts 文件夹之外，开头命名为 _ (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。</p></blockquote><h3 id="3-5-themes"><a href="#3-5-themes" class="headerlink" title="3.5. themes"></a>3.5. themes</h3><blockquote><p>主题文件夹。Hexo 会根据主题来解析source目录中的markdown文件生成静态页面。官网主题详述</p></blockquote><h2 id="4-写作"><a href="#4-写作" class="headerlink" title="4. 写作"></a>4. 写作</h2><blockquote><p>可以执行下列命令来创建一篇新文章。</p><pre><code>$ hexo new [layout] &lt;title&gt;可以在命令中指定文章的布局（layout），不指定默认为 post，也可以通过修改 _config.yml 中的 default_layout 参数来指定默认布局。创建的新文章会自动加上指定布局对应的模板文件中的内容。</code></pre></blockquote><h3 id="4-1-布局（Layout）"><a href="#4-1-布局（Layout）" class="headerlink" title="4.1. 布局（Layout）"></a>4.1. 布局（Layout）</h3><blockquote><p>Hexo 有三种默认布局：post、page 和 draft，它们分别对应不同的路径，而自定义的其他布局和 post 相同，都将储存到 source/_posts 文件夹。</p><p>布局路径postsource/_postspagesourcedraftsource/_drafts</p><p>如果你不想你的文章被处理，你可以将 Front-Matter 中的layout: 设为 false 。</p></blockquote><h3 id="4-2-模版（Scaffold）"><a href="#4-2-模版（Scaffold）" class="headerlink" title="4.2. 模版（Scaffold）"></a>4.2. 模版（Scaffold）</h3><blockquote><p>在新建文章时，Hexo 会根据 scaffolds 文件夹内相对应的文件来建立文件，例如：</p><pre><code>$ hexo new photo &quot;My Gallery&quot;</code></pre><p>在执行这行指令时，Hexo 会尝试在 scaffolds 文件夹中寻找 photo.md，并根据其内容建立文章，以下是您可以在模版中使用的变量：</p><p>变量描述layout布局title标题date文件建立日期</p></blockquote><h3 id="4-3-Front-matter"><a href="#4-3-Front-matter" class="headerlink" title="4.3. Front-matter"></a>4.3. Front-matter</h3><blockquote><p>Front-matter是文件最上方以 — 分隔的区域，用于指定个别文件的变量，举例来说：</p><pre><code>---title: Hello Worlddate: 2013/7/13 20:46:25---</code></pre><p>注意：一般Front-matter使用的yaml语法，yaml语法需要注意空格，如title: Hello World冒号需要有一个空格，当然除YAML 外，你也可以使用 JSON 来编写 Front-matter。<br>以下是预先定义的参数，您可在模板中使用这些参数值并加以利用。</p><p>参数描述默认值layout布局title标题date建立日期文件建立日updated更新日期文件更新日期comments开启文章的评论功能truetags标签（不适用于分页）categories分类（不适用于分页）permalink覆盖文章网址</p></blockquote><h3 id="分类和标签"><a href="#分类和标签" class="headerlink" title="分类和标签"></a>分类和标签</h3><blockquote><p>只有文章支持分类和标签，您可以在 Front-matter 中设置。在其他系统中，分类和标签听起来很接近，但是在 Hexo 中两者有着明显的差别：分类具有顺序性和层次性而标签没有顺序和层次。</p><pre><code>categories:- Diarytags:- PS3- Games</code></pre><p>WordPress支持对一篇文章设置多个分类，而且这些分类可以是同级的，也可以是父子分类。但是Hexo不支持指定多个同级分类。下面的指定方法： categories:<br>Diary<br>Life<br>会使分类Life成为Diary的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类.</p></blockquote><h3 id="4-4-文章摘要"><a href="#4-4-文章摘要" class="headerlink" title="4.4. 文章摘要"></a>4.4. 文章摘要</h3><blockquote><p>设置文章摘要，我们只需在想显示为摘要的内容之后添 <code>&lt;!-- more --&gt;</code> 即可。像下面这样：</p><pre><code>---title: hello hexo markdowndate: 2016-11-16 18:11:25tags:- hello- hexo- markdown---我是短小精悍的文章摘要(๑•̀ㅂ•́) ✧&lt;!-- more --&gt;紧接着文章摘要的正文内容</code></pre><p>这样，<span id="more"></span> 之前、文档配置参数之后中的内容便会被渲染为站点中的文章摘要。</p><p>注意！文章摘要在文章详情页是正文中最前面的内容。</p></blockquote><h3 id="4-5-资源引用"><a href="#4-5-资源引用" class="headerlink" title="4.5. 资源引用"></a>4.5. 资源引用</h3><blockquote><p>写个博客，有时候会想添加个图片或者其他形式的资源等等。有以下两种方式进行解决：</p><p>使用绝对路径引用资源，在 Web 世界中就是资源的 URL<br>使用相对路径引用资源<br>对于使用相对路径引用资源的，我们可以使用 Hexo 提供的资源文件夹功能。</p><p>使用文本编辑器打开站点根目录下的 _ config.yml 文件，将 post_asset_folder 值设置为 true。</p><p>post_asset_folder: true<br>修改之后会开启 Hexo 的文章资源文件管理功能。Hexo 将会在我们每一次通过 hexo new <title> 命令创建新文章时自动创建一个同名文件夹，于是我们便可以将文章所引用的相关资源放到这个同名文件夹下，然后通过相对路径引用。例如，你把一个 example.jpg 图片放在了这个同名文件夹中，使用相对路径的常规 markdown 语法 <img src="./example.jpg">即可访问 。</p></blockquote><h2 id="5-网站发布"><a href="#5-网站发布" class="headerlink" title="5. 网站发布"></a>5. 网站发布</h2><blockquote><p>首先执行下列命令生成相应的静态网页，生成的静态网页以及相关资源都会在public目录下</p><pre><code>$ hexo generate</code></pre></blockquote><h3 id="5-1-用hexo-server"><a href="#5-1-用hexo-server" class="headerlink" title="5.1. 用hexo-server"></a>5.1. 用hexo-server</h3><blockquote><p>hexo-server模块的主要命令如下，输入以下命令以启动服务器，您的网站会在 <a href="http://localhost:4000/">http://localhost:4000</a> 下启动。在服务器启动期间，Hexo 会监视文件变动并自动更新，您无须重启服务器。</p><pre><code>$ hexo server</code></pre><p>如果您想要更改端口，或是在执行时遇到了 EADDRINUSE 错误，可以在执行时使用 -p 选项指定其他端口，如下：</p><pre><code>$ hexo server -p 5000</code></pre><p>但是个人认为此方式比较适合用于调试网站，并不适合长时间的网站服务器，同时为了让这个命令在后台长时间运行，需要编写相应的脚本。</p></blockquote><h3 id="5-2-部署到Git上"><a href="#5-2-部署到Git上" class="headerlink" title="5.2. 部署到Git上"></a>5.2. 部署到Git上</h3><blockquote><p>这个暂时没有尝试过，但是网络上很多都是关于部署到Git上的，可以自行谷歌或百度。</p></blockquote><h3 id="5-3-部署到Apache或者Nginx上"><a href="#5-3-部署到Apache或者Nginx上" class="headerlink" title="5.3. 部署到Apache或者Nginx上"></a>5.3. 部署到Apache或者Nginx上</h3><blockquote><p>通过hexo g命令生成的都是静态网页，可以把生成的public目录中的文件，全都拷贝到网站根目录，然后启动apache或者nginx服务。</p></blockquote><h2 id="6-其他基础命令"><a href="#6-其他基础命令" class="headerlink" title="6. 其他基础命令"></a>6. 其他基础命令</h2><h3 id="6-1-清除缓存文件"><a href="#6-1-清除缓存文件" class="headerlink" title="6.1. 清除缓存文件"></a>6.1. 清除缓存文件</h3><blockquote><p>为了避免不必要的错误，在生成静态文件前，强烈建议先运行以下命令：</p><pre><code>$ hexo clean</code></pre><p>上述命令会清除本地站点文件夹下的缓存文件（db.json）和已有的静态文件（public）。</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><blockquote><p>Hexo是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。即把用户的markdown文件，按照指定的主题解析成静态网页。</p></blockquote><h2 id="2-安装hexo"><a href="#2-安装hexo" class="headerlink" title="2. 安装hexo"></a>2. 安装hexo</h2><blockquote><p>安装使用hexo之前需要先安装Node.js和Git，当已经安装了Node.js和npm(npm是node.js的包管理工具)，可以通过以下命令安装hexo</p><pre><code>$ npm install -g hexo-cli可以通过以下命令查看主机中是否安装了node.js和npm$ node --version    #检查是否安装了node.js$ npm --version     #检查是否安装了npm如下所示表示已经安装了node.js和npmroot@***:~# node --versionv8.11.3root@***:~# npm --version6.7.0</code></pre></blockquote><h2 id="3-建站"><a href="#3-建站" class="headerlink" title="3. 建站"></a>3. 建站</h2><blockquote><p>安装完Hexo之后，执行下列命令，Hexo将会在指定目录中新建所需要的文件，指定的目录即为Hexo的工作站</p><pre><code>$ hexo init &lt;folder&gt;$ cd &lt;folder&gt;$ npm install新建完成之后，指定目录中的情况如下.├── _config.yml├── package.json├── scaffolds├── source|   ├── _drafts|   └── _posts└── themes</code></pre></blockquote><h3 id="3-1-config-yml"><a href="#3-1-config-yml" class="headerlink" title="3.1. _config.yml"></a>3.1. _config.yml</h3><blockquote><p>网站的配置信息，您可以在此配置大部分的参数。 </p></blockquote><h3 id="3-2-package-json"><a href="#3-2-package-json" class="headerlink" title="3.2. package.json"></a>3.2. package.json</h3><blockquote><p>应用程序的信息，以及需要安装的模块信息。</p></blockquote><h3 id="3-3-scaffolds"><a href="#3-3-scaffolds" class="headerlink" title="3.3. scaffolds"></a>3.3. scaffolds</h3><blockquote><p>模版文件夹。新建文章时，Hexo 会根据 scaffold 中的模板文件来建立新的文件。Hexo的模板是指在新建的markdown文件中默认填充的内容。例如，如果修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。也就是说，通过hexo命令每新建一个文章，都会包含指定模板文件中的内容。</p></blockquote><h3 id="3-4-source"><a href="#3-4-source" class="headerlink" title="3.4. source"></a>3.4. source</h3><blockquote><p>资源文件夹是存放用户资源的地方，如markdown文章。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。</p><p>注意：除 _posts 文件夹之外，开头命名为 _ (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。</p></blockquote><h3 id="3-5-themes"><a href="#3-5-themes" class="headerlink" title="3.5. themes"></a>3.5. themes</h3><blockquote><p>主题文件夹。Hexo 会根据主题来解析source目录中的markdown文件生成静态页面。官网主题详述</p></blockquote><h2 id="4-写作"><a href="#4-写作" class="headerlink" title="4. 写作"></a>4. 写作</h2><blockquote><p>可以执行下列命令来创建一篇新文章。</p><pre><code>$ hexo new [layout] &lt;title&gt;可以在命令中指定文章的布局（layout），不指定默认为 post，也可以通过修改 _config.yml 中的 default_layout 参数来指定默认布局。创建的新文章会自动加上指定布局对应的模板文件中的内容。</code></pre></blockquote><h3 id="4-1-布局（Layout）"><a href="#4-1-布局（Layout）" class="headerlink" title="4.1. 布局（Layout）"></a>4.1. 布局（Layout）</h3><blockquote><p>Hexo 有三种默认布局：post、page 和 draft，它们分别对应不同的路径，而自定义的其他布局和 post 相同，都将储存到 source/_posts 文件夹。</p><p>布局路径postsource/_postspagesourcedraftsource/_drafts</p><p>如果你不想你的文章被处理，你可以将 Front-Matter 中的layout: 设为 false 。</p></blockquote><h3 id="4-2-模版（Scaffold）"><a href="#4-2-模版（Scaffold）" class="headerlink" title="4.2. 模版（Scaffold）"></a>4.2. 模版（Scaffold）</h3><blockquote><p>在新建文章时，Hexo 会根据 scaffolds 文件夹内相对应的文件来建立文件，例如：</p><pre><code>$ hexo new photo &quot;My Gallery&quot;</code></pre><p>在执行这行指令时，Hexo 会尝试在 scaffolds 文件夹中寻找 photo.md，并根据其内容建立文章，以下是您可以在模版中使用的变量：</p><p>变量描述layout布局title标题date文件建立日期</p></blockquote><h3 id="4-3-Front-matter"><a href="#4-3-Front-matter" class="headerlink" title="4.3. Front-matter"></a>4.3. Front-matter</h3><blockquote><p>Front-matter是文件最上方以 — 分隔的区域，用于指定个别文件的变量，举例来说：</p><pre><code>---title: Hello Worlddate: 2013/7/13 20:46:25---</code></pre><p>注意：一般Front-matter使用的yaml语法，yaml语法需要注意空格，如title: Hello World冒号需要有一个空格，当然除YAML 外，你也可以使用 JSON 来编写 Front-matter。<br>以下是预先定义的参数，您可在模板中使用这些参数值并加以利用。</p><p>参数描述默认值layout布局title标题date建立日期文件建立日updated更新日期文件更新日期comments开启文章的评论功能truetags标签（不适用于分页）categories分类（不适用于分页）permalink覆盖文章网址</p></blockquote><h3 id="分类和标签"><a href="#分类和标签" class="headerlink" title="分类和标签"></a>分类和标签</h3><blockquote><p>只有文章支持分类和标签，您可以在 Front-matter 中设置。在其他系统中，分类和标签听起来很接近，但是在 Hexo 中两者有着明显的差别：分类具有顺序性和层次性而标签没有顺序和层次。</p><pre><code>categories:- Diarytags:- PS3- Games</code></pre><p>WordPress支持对一篇文章设置多个分类，而且这些分类可以是同级的，也可以是父子分类。但是Hexo不支持指定多个同级分类。下面的指定方法： categories:<br>Diary<br>Life<br>会使分类Life成为Diary的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类.</p></blockquote><h3 id="4-4-文章摘要"><a href="#4-4-文章摘要" class="headerlink" title="4.4. 文章摘要"></a>4.4. 文章摘要</h3><blockquote><p>设置文章摘要，我们只需在想显示为摘要的内容之后添 <code>&lt;!-- more --&gt;</code> 即可。像下面这样：</p><pre><code>---title: hello hexo markdowndate: 2016-11-16 18:11:25tags:- hello- hexo- markdown---我是短小精悍的文章摘要(๑•̀ㅂ•́) ✧&lt;!-- more --&gt;紧接着文章摘要的正文内容</code></pre><p>这样，<code>&lt;!-- more --&gt;</code> 之前、文档配置参数之后中的内容便会被渲染为站点中的文章摘要。</p><p>注意！文章摘要在文章详情页是正文中最前面的内容。</p></blockquote><h3 id="4-5-资源引用"><a href="#4-5-资源引用" class="headerlink" title="4.5. 资源引用"></a>4.5. 资源引用</h3><blockquote><p>写个博客，有时候会想添加个图片或者其他形式的资源等等。有以下两种方式进行解决：</p><p>使用绝对路径引用资源，在 Web 世界中就是资源的 URL<br>使用相对路径引用资源<br>对于使用相对路径引用资源的，我们可以使用 Hexo 提供的资源文件夹功能。</p><p>使用文本编辑器打开站点根目录下的 _ config.yml 文件，将 post_asset_folder 值设置为 true。</p><p>post_asset_folder: true<br>修改之后会开启 Hexo 的文章资源文件管理功能。Hexo 将会在我们每一次通过 hexo new <title> 命令创建新文章时自动创建一个同名文件夹，于是我们便可以将文章所引用的相关资源放到这个同名文件夹下，然后通过相对路径引用。例如，你把一个 example.jpg 图片放在了这个同名文件夹中，使用相对路径的常规 markdown 语法 <img src="./example.jpg">即可访问 。</p></blockquote><h2 id="5-网站发布"><a href="#5-网站发布" class="headerlink" title="5. 网站发布"></a>5. 网站发布</h2><blockquote><p>首先执行下列命令生成相应的静态网页，生成的静态网页以及相关资源都会在public目录下</p><pre><code>$ hexo generate</code></pre></blockquote><h3 id="5-1-用hexo-server"><a href="#5-1-用hexo-server" class="headerlink" title="5.1. 用hexo-server"></a>5.1. 用hexo-server</h3><blockquote><p>hexo-server模块的主要命令如下，输入以下命令以启动服务器，您的网站会在 <a href="http://localhost:4000/">http://localhost:4000</a> 下启动。在服务器启动期间，Hexo 会监视文件变动并自动更新，您无须重启服务器。</p><pre><code>$ hexo server</code></pre><p>如果您想要更改端口，或是在执行时遇到了 EADDRINUSE 错误，可以在执行时使用 -p 选项指定其他端口，如下：</p><pre><code>$ hexo server -p 5000</code></pre><p>但是个人认为此方式比较适合用于调试网站，并不适合长时间的网站服务器，同时为了让这个命令在后台长时间运行，需要编写相应的脚本。</p></blockquote><h3 id="5-2-部署到Git上"><a href="#5-2-部署到Git上" class="headerlink" title="5.2. 部署到Git上"></a>5.2. 部署到Git上</h3><blockquote><p>这个暂时没有尝试过，但是网络上很多都是关于部署到Git上的，可以自行谷歌或百度。</p></blockquote><h3 id="5-3-部署到Apache或者Nginx上"><a href="#5-3-部署到Apache或者Nginx上" class="headerlink" title="5.3. 部署到Apache或者Nginx上"></a>5.3. 部署到Apache或者Nginx上</h3><blockquote><p>通过hexo g命令生成的都是静态网页，可以把生成的public目录中的文件，全都拷贝到网站根目录，然后启动apache或者nginx服务。</p></blockquote><h2 id="6-其他基础命令"><a href="#6-其他基础命令" class="headerlink" title="6. 其他基础命令"></a>6. 其他基础命令</h2><h3 id="6-1-清除缓存文件"><a href="#6-1-清除缓存文件" class="headerlink" title="6.1. 清除缓存文件"></a>6.1. 清除缓存文件</h3><blockquote><p>为了避免不必要的错误，在生成静态文件前，强烈建议先运行以下命令：</p><pre><code>$ hexo clean</code></pre><p>上述命令会清除本地站点文件夹下的缓存文件（db.json）和已有的静态文件（public）。</p></blockquote>]]></content>
     
     
-    <summary type="html">&lt;h2 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;Hexo是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。即把用户的markdown文件，按照指定的主题解析成静态网页。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;2-安装hexo&quot;&gt;&lt;a href=&quot;#2-安装hexo&quot; class=&quot;headerlink&quot; title=&quot;2. 安装hexo&quot;&gt;&lt;/a&gt;2. 安装hexo&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;安装使用hexo之前需要先安装Node.js和Git，当已经安装了Node.js和npm(npm是node.js的包管理工具)，可以通过以下命令安装hexo&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ npm install -g hexo-cli
-可以通过以下命令查看主机中是否安装了node.js和npm
-
-$ node --version    #检查是否安装了node.js
-$ npm --version     #检查是否安装了npm
-如下所示表示已经安装了node.js和npm
-
-root@***:~# node --version
-v8.11.3
-root@***:~# npm --version
-6.7.0
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;3-建站&quot;&gt;&lt;a href=&quot;#3-建站&quot; class=&quot;headerlink&quot; title=&quot;3. 建站&quot;&gt;&lt;/a&gt;3. 建站&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;安装完Hexo之后，执行下列命令，Hexo将会在指定目录中新建所需要的文件，指定的目录即为Hexo的工作站&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ hexo init &amp;lt;folder&amp;gt;
-$ cd &amp;lt;folder&amp;gt;
-$ npm install
-新建完成之后，指定目录中的情况如下
-
-.
-├── _config.yml
-├── package.json
-├── scaffolds
-├── source
-|   ├── _drafts
-|   └── _posts
-└── themes
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;3-1-config-yml&quot;&gt;&lt;a href=&quot;#3-1-config-yml&quot; class=&quot;headerlink&quot; title=&quot;3.1. _config.yml&quot;&gt;&lt;/a&gt;3.1. _config.yml&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;网站的配置信息，您可以在此配置大部分的参数。 &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;3-2-package-json&quot;&gt;&lt;a href=&quot;#3-2-package-json&quot; class=&quot;headerlink&quot; title=&quot;3.2. package.json&quot;&gt;&lt;/a&gt;3.2. package.json&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;应用程序的信息，以及需要安装的模块信息。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;3-3-scaffolds&quot;&gt;&lt;a href=&quot;#3-3-scaffolds&quot; class=&quot;headerlink&quot; title=&quot;3.3. scaffolds&quot;&gt;&lt;/a&gt;3.3. scaffolds&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;模版文件夹。新建文章时，Hexo 会根据 scaffold 中的模板文件来建立新的文件。Hexo的模板是指在新建的markdown文件中默认填充的内容。例如，如果修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。也就是说，通过hexo命令每新建一个文章，都会包含指定模板文件中的内容。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;3-4-source&quot;&gt;&lt;a href=&quot;#3-4-source&quot; class=&quot;headerlink&quot; title=&quot;3.4. source&quot;&gt;&lt;/a&gt;3.4. source&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;资源文件夹是存放用户资源的地方，如markdown文章。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。&lt;/p&gt;
-&lt;p&gt;注意：除 _posts 文件夹之外，开头命名为 _ (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;3-5-themes&quot;&gt;&lt;a href=&quot;#3-5-themes&quot; class=&quot;headerlink&quot; title=&quot;3.5. themes&quot;&gt;&lt;/a&gt;3.5. themes&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;主题文件夹。Hexo 会根据主题来解析source目录中的markdown文件生成静态页面。官网主题详述&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;4-写作&quot;&gt;&lt;a href=&quot;#4-写作&quot; class=&quot;headerlink&quot; title=&quot;4. 写作&quot;&gt;&lt;/a&gt;4. 写作&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;可以执行下列命令来创建一篇新文章。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ hexo new [layout] &amp;lt;title&amp;gt;
-可以在命令中指定文章的布局（layout），不指定默认为 post，也可以通过修改 _config.yml 中的 default_layout 参数来指定默认布局。创建的新文章会自动加上指定布局对应的模板文件中的内容。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;4-1-布局（Layout）&quot;&gt;&lt;a href=&quot;#4-1-布局（Layout）&quot; class=&quot;headerlink&quot; title=&quot;4.1. 布局（Layout）&quot;&gt;&lt;/a&gt;4.1. 布局（Layout）&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;Hexo 有三种默认布局：post、page 和 draft，它们分别对应不同的路径，而自定义的其他布局和 post 相同，都将储存到 source/_posts 文件夹。&lt;/p&gt;
-&lt;p&gt;布局路径postsource/_postspagesourcedraftsource/_drafts&lt;/p&gt;
-&lt;p&gt;如果你不想你的文章被处理，你可以将 Front-Matter 中的layout: 设为 false 。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;4-2-模版（Scaffold）&quot;&gt;&lt;a href=&quot;#4-2-模版（Scaffold）&quot; class=&quot;headerlink&quot; title=&quot;4.2. 模版（Scaffold）&quot;&gt;&lt;/a&gt;4.2. 模版（Scaffold）&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;在新建文章时，Hexo 会根据 scaffolds 文件夹内相对应的文件来建立文件，例如：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ hexo new photo &amp;quot;My Gallery&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在执行这行指令时，Hexo 会尝试在 scaffolds 文件夹中寻找 photo.md，并根据其内容建立文章，以下是您可以在模版中使用的变量：&lt;/p&gt;
-&lt;p&gt;变量描述layout布局title标题date文件建立日期&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;4-3-Front-matter&quot;&gt;&lt;a href=&quot;#4-3-Front-matter&quot; class=&quot;headerlink&quot; title=&quot;4.3. Front-matter&quot;&gt;&lt;/a&gt;4.3. Front-matter&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;Front-matter是文件最上方以 — 分隔的区域，用于指定个别文件的变量，举例来说：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;---
-title: Hello World
-date: 2013/7/13 20:46:25
----
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;注意：一般Front-matter使用的yaml语法，yaml语法需要注意空格，如title: Hello World冒号需要有一个空格，当然除YAML 外，你也可以使用 JSON 来编写 Front-matter。&lt;br&gt;以下是预先定义的参数，您可在模板中使用这些参数值并加以利用。&lt;/p&gt;
-&lt;p&gt;参数描述默认值layout布局title标题date建立日期文件建立日updated更新日期文件更新日期comments开启文章的评论功能truetags标签（不适用于分页）categories分类（不适用于分页）permalink覆盖文章网址&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;分类和标签&quot;&gt;&lt;a href=&quot;#分类和标签&quot; class=&quot;headerlink&quot; title=&quot;分类和标签&quot;&gt;&lt;/a&gt;分类和标签&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;只有文章支持分类和标签，您可以在 Front-matter 中设置。在其他系统中，分类和标签听起来很接近，但是在 Hexo 中两者有着明显的差别：分类具有顺序性和层次性而标签没有顺序和层次。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;categories:
-- Diary
-tags:
-- PS3
-- Games
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;WordPress支持对一篇文章设置多个分类，而且这些分类可以是同级的，也可以是父子分类。但是Hexo不支持指定多个同级分类。下面的指定方法： categories:&lt;br&gt;Diary&lt;br&gt;Life&lt;br&gt;会使分类Life成为Diary的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;4-4-文章摘要&quot;&gt;&lt;a href=&quot;#4-4-文章摘要&quot; class=&quot;headerlink&quot; title=&quot;4.4. 文章摘要&quot;&gt;&lt;/a&gt;4.4. 文章摘要&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;设置文章摘要，我们只需在想显示为摘要的内容之后添 &lt;code&gt;&amp;lt;!-- more --&amp;gt;&lt;/code&gt; 即可。像下面这样：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;---
-title: hello hexo markdown
-date: 2016-11-16 18:11:25
-tags:
-- hello
-- hexo
-- markdown
----
-
-我是短小精悍的文章摘要(๑•̀ㅂ•́) ✧
-
-&amp;lt;!-- more --&amp;gt;
-
-紧接着文章摘要的正文内容
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这样，</summary>
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
     
     
     
