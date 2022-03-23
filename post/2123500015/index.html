@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>WebRTC使用 - SJのBlog</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="SJ">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    
+
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/HEROhuqinchao/dowload/main/image/head.jpeg" type="image/x-icon" />
+    <meta name="description" content="webrtc-mirrorWebRTC国内加速镜像 https:&#x2F;&#x2F;github.com&#x2F;webrtc-mirror&#x2F;mirror 项目背景在进行WebRTC开发的时候经常需要编译WebRTC，但由于WebRTC依赖较多（十几个G）， 而且大多数内容需要翻墙。 我们尝试了多种加速编译的方法，最终找到一个对WebRTC代码没有任何侵入的镜像方案。相信行业内的很多人都体验过WebRTC编译的痛苦，尤其">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WebRTC使用">
+<meta property="og:url" content="https://herohuqinchao.github.io/post/2123500015/">
+<meta property="og:site_name" content="SJのBlog">
+<meta property="og:description" content="webrtc-mirrorWebRTC国内加速镜像 https:&#x2F;&#x2F;github.com&#x2F;webrtc-mirror&#x2F;mirror 项目背景在进行WebRTC开发的时候经常需要编译WebRTC，但由于WebRTC依赖较多（十几个G）， 而且大多数内容需要翻墙。 我们尝试了多种加速编译的方法，最终找到一个对WebRTC代码没有任何侵入的镜像方案。相信行业内的很多人都体验过WebRTC编译的痛苦，尤其">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-23T07:33:05.000Z">
+<meta property="article:modified_time" content="2022-03-23T07:36:52.337Z">
+<meta property="article:author" content="SJ">
+<meta property="article:tag" content="WebRTC">
+<meta name="twitter:card" content="summary">
+    <link rel="stylesheet" href="/lib/jquery.fancybox.min.css?v=1648021301959">
+    
+        <link rel="stylesheet" href="//at.alicdn.com/t/font_3167237_lv2olm2qxt.css">
+    
+    <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css?v=1648021301959">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1648021301959">
+    <link rel="stylesheet" href="/css/style.css?v=1648021301959">
+     
+    
+        <link rel="stylesheet" href="/custom.css">
+    
+<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="SJのBlog" type="application/atom+xml">
+</head>
+
+<body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" style="background-image: url(https://raw.githubusercontent.com/HEROhuqinchao/dowload/main/image/background.jpeg)"></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="SJ" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/HEROhuqinchao/dowload/main/image/head.jpeg" alt="SJ"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="SJ">
+            <img src="https://raw.githubusercontent.com/HEROhuqinchao/dowload/main/image/head.jpeg" alt="SJ" alt="SJ">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>4</div>
+        <div><span>标签</span>3</div>
+        <div><span>分类</span>2</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="首页">
+            <i class="mdui-list-item-icon nexmoefont icon-city"></i>
+            <div class="mdui-list-item-content">
+                首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-gongyuan"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/library" title="资源库">
+            <i class="mdui-list-item-icon nexmoefont icon-tushuguan"></i>
+            <div class="mdui-list-item-content">
+                资源库
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/playlist/playlist" title="我的歌单">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的歌单
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-chezhan"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about" title="关于我">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于我
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://im.qq.com" target="_blank" mdui-tooltip="{content: 'QQ'}" style="color: rgb(249, 174, 8);background-color: rgba(249, 174, 8, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://www.jianshu.com/u/e1cd35fad23b" target="_blank" mdui-tooltip="{content: '简书'}" style="color: rgb(75, 63, 243);background-color: rgba(75, 63, 243, .15);">
+            <i class="nexmoefont icon-jianshu"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/241403984" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://www.youtube.com" target="_blank" mdui-tooltip="{content: 'Youtube'}" style="color: rgb(222, 69, 28);background-color: rgba(222, 69, 28, .15）;">
+            <i class="nexmoefont icon-youtube"></i>
+        </a><a class="mdui-ripple" href="https://github.com/HEROhuqinchao" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/iOS面试/">iOS面试</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/学习日常/">学习日常</a>
+          <span class="category-list-count">3</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/OC/" style="font-size: 10px;">OC</a> <a href="/tags/WebRTC/" style="font-size: 10px;">WebRTC</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 20px;">博客</a>
+    </div>
+    
+      <script>
+        var maxTagcloud = parseInt(10);
+        var tags_length = parseInt(3);
+        var tags_arr = [];
+        for(var i = 0; i < tags_length; i++){
+          tags_arr.push(i);
+        }
+        tags_arr.sort(function (l, r) {
+          return Math.random() > 0.5 ? -1 : 1;
+        });
+        tags_arr = tags_arr.slice(0, maxTagcloud < tags_length ? tags_length - maxTagcloud : 0);
+        for(var tag_i = 0; tag_i < tags_arr.length; tag_i++){
+          document.getElementById("randomtagcloud").children[tags_arr[tag_i]].style.display = 'none';
+        }
+      </script>
+    
+  </div>
+
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">最新文章</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/post/2123500015/">WebRTC使用</a>
+          </li>
+        
+          <li>
+            <a href="/post/2602165680/">Hexo的基本使用</a>
+          </li>
+        
+          <li>
+            <a href="/post/950528940/">面试题（一）</a>
+          </li>
+        
+          <li>
+            <a href="/post/1750059094/">个人Blog使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 SJ
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        <br><p></p><a target="_blank" href="https://github.com"><img src="https://raw.githubusercontent.com/HEROhuqinchao/dowload/main/image/github.jpeg" width="100px" height="100px"></a><script data-ad-client="ca-pub-2058306854838448" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+            <div class="nexmoe-post">
+
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: 56.25%;"> 
+              <img data-src="https://raw.githubusercontent.com/HEROhuqinchao/dowload/main/image/background.jpeg" data-sizes="auto" alt="WebRTC使用" class="lazyload">
+              <h1>WebRTC使用</h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年03月23日</a>
+</div>
+
+      
+
+      <h1 id="webrtc-mirror"><a href="#webrtc-mirror" class="headerlink" title="webrtc-mirror"></a>webrtc-mirror</h1><p>WebRTC国内加速镜像 <a target="_blank" rel="noopener" href="https://github.com/webrtc-mirror/mirror">https://github.com/webrtc-mirror/mirror</a></p>
+<h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>在进行WebRTC开发的时候经常需要编译WebRTC，但由于WebRTC依赖较多（十几个G）， 而且大多数内容需要翻墙。 我们尝试了多种加速编译的方法，最终找到一个对WebRTC代码没有任何侵入的镜像方案。<br>相信行业内的很多人都体验过WebRTC编译的痛苦，尤其是新接触WebRTC的人，我们决定提供这个WebRTC镜像的方案。快乐自己造福大家。</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>WebRTC的依赖主要分为三类:</p>
+<p>1，放在git中的代码，这部分大概有三十多个仓库， <code>gcient sync</code> 会把这些git仓库的历史记录都拉下来，所以有的厂库会非常大，这些代码大都在google code上， 在镜像的时候我们把这些git代码同步到了gitlab， 之所以放到gitlab上是因为github上对仓库大小会做限制，导致有些代码同步不成功。这些依赖会10分钟同步一次，保持跟google code上代码仓库保持一致。</p>
+<p>2，cipd的模块代码， 这部分代码放在appspot.com上面，这部分代码不好做镜像，可以通过采用http代理的方式来进行下载。</p>
+<p>3，google storage上的依赖， google storage上的内容非常庞大， 不好做镜像， 可以通过采用http代理的方式进行下载。</p>
+<p>在同步WebRTC的依赖过程中，git中的代码会从gitlab相对应的仓库中拉取， 不好镜像的部分我们提供了http代理进行下载。</p>
+<h2 id="镜像说明"><a href="#镜像说明" class="headerlink" title="镜像说明"></a>镜像说明</h2><ul>
+<li>对WebRTC源码不做任何修改</li>
+<li>每十分钟和官方代码同步一次</li>
+</ul>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><ul>
+<li>我们的镜像方案参考了声网的方案，具体可以看 <a target="_blank" rel="noopener" href="https://rtcdeveloper.com/t/topic/14914">https://rtcdeveloper.com/t/topic/14914</a></li>
+<li>感谢gitlab承载了部分webrtc代码和第三方依赖的代码，<a target="_blank" rel="noopener" href="https://gitlab.com/webrtc-mirror">https://gitlab.com/webrtc-mirror</a>  </li>
+</ul>
+<h2 id="编译步骤"><a href="#编译步骤" class="headerlink" title="编译步骤"></a>编译步骤</h2><h4 id="替换git仓库地址"><a href="#替换git仓库地址" class="headerlink" title="替换git仓库地址"></a>替换git仓库地址</h4><figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>webrtc.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/external/</span>webrtc.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>base.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>src/base<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>build.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>src/build<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>buildtools.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>src/buildtools<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/g</span>radle.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/external/gi</span>thub.com<span class="hljs-regexp">/gradle/g</span>radle.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/i</span>os.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>src/ios.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>testing.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>src/testing<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>third_party.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>src/third_party<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>clang-format.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>llvm-project<span class="hljs-regexp">/cfe/</span>tools/clang-format.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>libcxx.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>llvm-project/libcxx.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>libcxxabi.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>llvm-project/libcxxabi.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>libunwind.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/external/</span>llvm.org/libunwind.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>android_ndk.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com/android_ndk.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>android_tools.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com/android_tools.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>auto.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/external/gi</span>thub.com<span class="hljs-regexp">/google/</span>auto.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>catapult.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com/catapult.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>compact_enc_det.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/external/gi</span>thub.com<span class="hljs-regexp">/google/</span>compact_enc_det.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>colorama.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/external/</span>colorama.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>depot_tools.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>tools/depot_tools.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>errorprone.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>third_party/errorprone.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>ffmpeg.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>third_party/ffmpeg.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>findbugs.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>deps/findbugs.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>freetype2.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>src<span class="hljs-regexp">/third_party/</span>freetype2.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>harfbuzz.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/external/gi</span>thub.com<span class="hljs-regexp">/harfbuzz/</span>harfbuzz.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/g</span>test-parallel.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/external/gi</span>thub.com<span class="hljs-regexp">/google/g</span>test-parallel<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/g</span>oogletest.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/external/gi</span>thub.com<span class="hljs-regexp">/google/g</span>oogletest.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/i</span>cu.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>deps/icu.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>jsr-<span class="hljs-number">305</span>.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/external/</span>jsr-<span class="hljs-number">305</span>.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>jsoncpp.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/external/gi</span>thub.com<span class="hljs-regexp">/open-source-parsers/</span>jsoncpp.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>junit.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/external/</span>junit.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>fuzzer.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>llvm-project<span class="hljs-regexp">/compiler-rt/</span>lib/fuzzer.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>libjpeg_turbo.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>deps/libjpeg_turbo.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>libsrtp.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>deps/libsrtp.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>libvpx.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/webm/</span>libvpx.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>libyuv.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/libyuv/</span>libyuv.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>linux-syscall-support.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com/linux-syscall-support.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/m</span>ockito.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/external/m</span>ockito/mockito.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>nasm.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>deps/nasm.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>openh264.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/external/gi</span>thub.com<span class="hljs-regexp">/cisco/</span>openh264<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>requests.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/external/gi</span>thub.com<span class="hljs-regexp">/kennethreitz/</span>requests.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>robolectric.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/external/</span>robolectric.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/u</span>b-uiautomator.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>third_party/ub-uiautomator.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/u</span>srsctp.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/external/gi</span>thub.com<span class="hljs-regexp">/sctplab/u</span>srsctp<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>binaries.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>deps<span class="hljs-regexp">/yasm/</span>binaries.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>patched-yasm.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>deps<span class="hljs-regexp">/yasm/</span>patched-yasm.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>tools.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/chromium/</span>src/tools<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>client-py.git.insteadOf https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/infra/</span>luci/client-py.git<br>git config --global url.https:<span class="hljs-regexp">//gi</span>tlab.com<span class="hljs-regexp">/webrtc-mirror/</span>boringssl.git.insteadOf https:<span class="hljs-regexp">//</span>boringssl.googlesource.com/boringssl.git<br></code></pre></td></tr></table></figure>
+
+
+<h4 id="安装depot-tools"><a href="#安装depot-tools" class="headerlink" title="安装depot_tools"></a>安装depot_tools</h4><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">export</span> WORKSPACE=$(<span class="hljs-built_in">pwd</span>)<br>git <span class="hljs-built_in">clone</span> https://chromium.googlesource.com/chromium/tools/depot_tools.git<br><span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$WORKSPACE</span>/depot_tools:<span class="hljs-variable">$PATH</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="配置http和https代理"><a href="#配置http和https代理" class="headerlink" title="配置http和https代理"></a>配置http和https代理</h4><figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span> http和https代理服务，因为是代理外网服务，有可能出现间歇性的不稳定，如果不工作可以提issuse<br><span class="hljs-regexp">//</span> 请不要滥用该http和https代理服务，后面会加上黑名单服务<br><br>export http_proxy=http:<span class="hljs-regexp">//</span><span class="hljs-number">39.105</span>.<span class="hljs-number">13.136</span>:<span class="hljs-number">8080</span><br>export https_proxy=http:<span class="hljs-regexp">//</span><span class="hljs-number">39.105</span>.<span class="hljs-number">13.136</span>:<span class="hljs-number">8080</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="同步WebRTC"><a href="#同步WebRTC" class="headerlink" title="同步WebRTC"></a>同步WebRTC</h4><figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">gclient config --name src https:<span class="hljs-regexp">//</span>chromium.googlesource.com<span class="hljs-regexp">/external/</span>webrtc.git<br><br>gclient sync <br></code></pre></td></tr></table></figure>
+
+
+<h4 id="编译WebRTC"><a href="#编译WebRTC" class="headerlink" title="编译WebRTC"></a>编译WebRTC</h4><p>mac平台</p>
+<figure class="highlight stata"><table><tr><td class="code"><pre><code class="hljs stata"><span class="hljs-keyword">cd</span> src<br><br><span class="hljs-comment">// 可以加入其它的编译参数</span><br>gn <span class="hljs-keyword">gen</span>  <span class="hljs-keyword">out</span>/<span class="hljs-keyword">mac</span> --<span class="hljs-keyword">args</span>=&#x27;is_debug=false target_cpu=<span class="hljs-string">&quot;x64&quot;</span> rtc_include_tests=false rtc_build_tools=false rtc_build_examples=false&#x27;<br><br><span class="hljs-comment">// mac_framework_objc 为framework， 可以为其它的target</span><br>ninja -C <span class="hljs-keyword">out</span>/<span class="hljs-keyword">mac</span>  mac_framework_objc<br></code></pre></td></tr></table></figure>
+
+<p>iOS平台</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> src<br><br>python tools_webrtc/ios/build_ios_libs.py  --output-dir  out/ios  --<span class="hljs-built_in">arch</span> arm64  --extra-gn-args rtc_include_tests=<span class="hljs-literal">false</span> rtc_build_tools=<span class="hljs-literal">false</span> rtc_build_examples=<span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
+
+
+<p>Linux平台</p>
+<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><code class="hljs jboss-cli"><span class="hljs-keyword">cd</span> src<br><br><span class="hljs-string">//</span> 安装依赖<br>bash build/install-build-deps.sh <br><br><span class="hljs-string">//</span> 可以加入其它的编译参数<br>gn gen  out/linux <span class="hljs-params">--args=</span>&#x27;is_debug=<span class="hljs-literal">false</span> target_cpu=<span class="hljs-string">&quot;x64&quot;</span> rtc_include_tests=<span class="hljs-literal">false</span> rtc_build_tools=<span class="hljs-literal">false</span> rtc_build_examples=<span class="hljs-literal">false</span>&#x27;<br><br><br>ninja -C out/linux <br></code></pre></td></tr></table></figure>
+
+<p>Android 平台（须在linux平台上编译）</p>
+<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><code class="hljs jboss-cli"><br><span class="hljs-comment"># 添加安卓平台</span><br><span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;target_os = [ &#x27;android&#x27; ]&quot;</span> &gt;&gt;  <span class="hljs-string">.gclient</span><br><br>gclient sync <br><br><span class="hljs-keyword">cd</span> src<br><br><span class="hljs-string">//</span> 安装android依赖<br><span class="hljs-string">./build/install-build-deps-android.sh</span><br><br>python tools_webrtc/android/build_aar.py  <span class="hljs-params">--build-dir</span> out/android  <span class="hljs-params">--arch</span> armeabi-v7a   <span class="hljs-params">--extra-gn-args</span> rtc_include_tests=<span class="hljs-literal">false</span> rtc_build_tools=<span class="hljs-literal">false</span> rtc_build_examples=<span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
+
+<p>Windows 平台</p>
+<figure class="highlight stata"><table><tr><td class="code"><pre><code class="hljs stata"><br>gn <span class="hljs-keyword">gen</span> <span class="hljs-keyword">out</span>/<span class="hljs-keyword">Win</span>  --<span class="hljs-keyword">args</span>=&#x27;proprietary_codecs=true  is_debug=false target_cpu=<span class="hljs-string">&quot;x86&quot;</span>  ffmpeg_branding=<span class="hljs-string">&quot;Chrome&quot;</span> rtc_include_tests=false&#x27;<br><br>ninja -C <span class="hljs-keyword">out</span>/<span class="hljs-keyword">Win</span><br><br></code></pre></td></tr></table></figure>
+
+
+<h4 id="清空http和https代理"><a href="#清空http和https代理" class="headerlink" title="清空http和https代理"></a>清空http和https代理</h4><p>由于对http和https代理做了相应的白名单处理， 使用该http代理后访问其它的网站会被禁止， 在编译完WebRTC需要把http和https代理设置为空</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><code class="hljs routeros"><br><span class="hljs-built_in">export</span> <span class="hljs-attribute">http_proxy</span>=<span class="hljs-string">&#x27;&#x27;</span><br><span class="hljs-built_in">export</span> <span class="hljs-attribute">https_proxy</span>=<span class="hljs-string">&#x27;&#x27;</span><br><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
+<li>为了加快下载和编译我们目前禁止掉了测试文件的下载， 所以在编译的时候请加上 <code>rtc_include_tests=false</code></li>
+<li>为了节省代理流量，我们对通过代理的域名进行了过滤，只允许WebRTC相关域名通过</li>
+</ul>
+
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>本文作者：</strong>SJ<br>
+        <strong>本文链接：</strong><a href="https://herohuqinchao.github.io/post/2123500015/" title="https:&#x2F;&#x2F;herohuqinchao.github.io&#x2F;post&#x2F;2123500015&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;herohuqinchao.github.io&#x2F;post&#x2F;2123500015&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/">学习日常</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/WebRTC/" rel="tag">WebRTC</a>
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div>
+            <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#webrtc-mirror"><span class="toc-number">1.</span> <span class="toc-text">webrtc-mirror</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF"><span class="toc-number">1.1.</span> <span class="toc-text">项目背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%95%9C%E5%83%8F%E8%AF%B4%E6%98%8E"><span class="toc-number">1.3.</span> <span class="toc-text">镜像说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%84%9F%E8%B0%A2"><span class="toc-number">1.4.</span> <span class="toc-text">感谢</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.5.</span> <span class="toc-text">编译步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%BF%E6%8D%A2git%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80"><span class="toc-number">1.5.0.1.</span> <span class="toc-text">替换git仓库地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85depot-tools"><span class="toc-number">1.5.0.2.</span> <span class="toc-text">安装depot_tools</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEhttp%E5%92%8Chttps%E4%BB%A3%E7%90%86"><span class="toc-number">1.5.0.3.</span> <span class="toc-text">配置http和https代理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5WebRTC"><span class="toc-number">1.5.0.4.</span> <span class="toc-text">同步WebRTC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E8%AF%91WebRTC"><span class="toc-number">1.5.0.5.</span> <span class="toc-text">编译WebRTC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%85%E7%A9%BAhttp%E5%92%8Chttps%E4%BB%A3%E7%90%86"><span class="toc-number">1.5.0.6.</span> <span class="toc-text">清空http和https代理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">1.6.</span> <span class="toc-text">注意</span></a></li></ol></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+     
+    <div id="nexmoe-search-space">
+        <div class="search-container">
+            <div class="search-header">
+                <div class="search-input-container">
+                    <input class="search-input" type="text" placeholder="搜索" oninput="sinput();">
+                </div>
+                <a class="search-close" onclick="sclose();">×</a>
+            </div>
+            <div class="search-body"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+ 
+
+<script async src="/js/app.js?v=1648021301975"></script>
+
+
+	<script async src="/js/search.js?v=1648021301975"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+
+    
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":200,"height":300},"mobile":{"show":false},"log":false});</script></body>
+
+</html>
