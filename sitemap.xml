@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://herohuqinchao.github.io/post/546191697/</loc>
+    
+    <lastmod>2022-04-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://herohuqinchao.github.io/post/1302214085/</loc>
+    
+    <lastmod>2022-04-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://herohuqinchao.github.io/post/2602165680/</loc>
     
     <lastmod>2022-03-23</lastmod>
@@ -94,7 +112,7 @@
 
   <url>
     <loc>https://herohuqinchao.github.io/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-04-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -102,21 +120,35 @@
   
   <url>
     <loc>https://herohuqinchao.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-04-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://herohuqinchao.github.io/tags/Xcode/</loc>
+    <lastmod>2022-04-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://herohuqinchao.github.io/tags/Swift/</loc>
+    <lastmod>2022-04-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://herohuqinchao.github.io/tags/WebRTC/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-04-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://herohuqinchao.github.io/tags/OC/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-04-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -125,14 +157,14 @@
   
   <url>
     <loc>https://herohuqinchao.github.io/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-04-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://herohuqinchao.github.io/categories/iOS%E9%9D%A2%E8%AF%95/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-04-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
