@@ -126,20 +126,6 @@
   </url>
   
   <url>
-    <loc>https://herohuqinchao.github.io/tags/Xcode/</loc>
-    <lastmod>2022-04-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://herohuqinchao.github.io/tags/Swift/</loc>
-    <lastmod>2022-04-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://herohuqinchao.github.io/tags/WebRTC/</loc>
     <lastmod>2022-04-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -147,7 +133,21 @@
   </url>
   
   <url>
+    <loc>https://herohuqinchao.github.io/tags/Xcode/</loc>
+    <lastmod>2022-04-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://herohuqinchao.github.io/tags/OC/</loc>
+    <lastmod>2022-04-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://herohuqinchao.github.io/tags/Swift/</loc>
     <lastmod>2022-04-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
